@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>...</title>
   <style>
-    * {
-      background-color: black;
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -70%);
+
     }
+
     video {
       position: absolute;
-      top:50%;
+      top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       height: 100%;
@@ -19,9 +25,42 @@
   </style>
 </head>
 
-<body>
-  <video autoplay playsinline style="pointer-events: none;">
+<body style="background-color: white;">
+  <div class="chromehome">
+    <img src="image.png" alt="" srcset="">
+  </div>
+
+  <video autoplay playsinline style="pointer-events: none; display: none;">
     <source src="rickrolled.mp4" type="video/mp4">
   </video>
+  <script>
+    const video = document.querySelector("video");
+    document.body.style.backgroundColor = "white"
+    video.currentTime = 43
+
+    document.addEventListener("input", (e) => {
+      video.play()
+      document.body.style.backgroundColor = "black"
+      video.style.display = "block"
+
+})
+
+    document.addEventListener("keydown", () => {
+      video.play()
+      document.body.style.backgroundColor = "black"
+      video.style.display = "block"
+
+    })
+
+    document.addEventListener("click", (e) => {
+      video.play()
+      document.body.style.backgroundColor = "black"
+      video.style.display = "block"
+
+    })
+    
+
+  </script>
 </body>
+
 </html>
